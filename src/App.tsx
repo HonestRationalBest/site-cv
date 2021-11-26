@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Header } from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
+import Home from "./pages/Home";
+import Cases from "./pages/Cases";
+import About from "./pages/About";
+import Contacts from "./pages/Contacts";
+import "./style/app/App.scss";
+import "./style/fonts/Fonts.scss";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="_container">
+      <Header />
+      <Routes>
+        <>
+          <Route path="/" element={<Home />} />
+          <Route path="/cases" element={<Cases />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contacts" element={<Contacts />} />
+        </>
+      </Routes>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
