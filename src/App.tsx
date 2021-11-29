@@ -11,7 +11,7 @@ import "./style/fonts/Fonts.scss";
 
 const App = () => {
   return (
-    <div className="_container">
+    <>
       <Header />
       <Routes>
         <>
@@ -21,8 +21,8 @@ const App = () => {
           <Route path="/contacts" element={<Contacts />} />
         </>
       </Routes>
-      <Footer />
-    </div>
+      {/* <Footer /> */}
+    </>
   );
 };
 
