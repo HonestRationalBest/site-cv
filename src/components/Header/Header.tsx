@@ -1,9 +1,9 @@
 import React from "react";
 import "./style/Header.scss";
 
-export const Header = () => {
+export const Header = ({menuStatus}:any) => {
   return (
-    <header className="header">
+    <header className={menuStatus ? "header _active": "header"}>
       <div className="header__container">
         <div className="header__body body-header">
           <div className="body-header__languages header-languages">
