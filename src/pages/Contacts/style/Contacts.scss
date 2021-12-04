@@ -1,0 +1,62 @@
+.contacts {
+  margin-top: 190px;
+  // .contacts__container
+  &__container {
+    width: 1200 / 1440 * 100%;
+    margin: 0px auto;
+    margin-left: 220px;
+  }
+}
+.body-contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.body-offer {
+  // .body-offer__pretext
+  &__pretext {
+    line-height: 17 / 14 * 100%;
+  }
+
+  // .body-offer__title
+  &__title {
+    margin-top: 15px;
+    font-size: 48px;
+    line-height: 100%;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  // .body-offer__content
+  &__content {
+    margin-top: 50px;
+  }
+
+  // .body-offer__text
+  &__text {
+    font-size: 18px;
+    line-height: 21 / 18 * 100%;
+  }
+}
+.body-form {
+  display: flex;
+  flex-direction: column;
+  // .body-form__input
+  &__input {
+    flex: 1 1 auto;
+    width: 535px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    padding: 27px 30px;
+    margin-bottom: 15px;
+  }
+
+  // .body-form__button
+  &__button {
+    background: #d3ddff;
+    border: 0;
+    padding: 27px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
