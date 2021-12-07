@@ -1,0 +1,249 @@
+.about {
+  // .about__container
+  &__container {
+    width: 1200 / 1440 * 100%;
+    margin: 0px auto;
+    margin-left: 220px;
+  }
+
+  &__description {
+    margin-top: 160px;
+  }
+
+  // .about__ticket
+  &__ticket {
+    margin-top: 160px;
+  }
+  &__running-string {
+    margin-top: 160px;
+  }
+
+  &__faq {
+    margin-top: 160px;
+  }
+}
+.main-about {
+  margin-top: 190px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  // .main-about__photo
+  &__photo {
+    width: 140px;
+    height: 160px;
+    background: url(../../images/about_avatar.png);
+  }
+
+  // .main-about__content
+  &__content {
+    width: 300px;
+    margin-top: 85px;
+  }
+
+  // .main-about__title
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+
+  // .main-about__text
+  &__text {
+    margin-top: 15px;
+  }
+
+  // .main-about__background
+  &__background {
+    width: 600px;
+    height: 400px;
+    background: url(../../images/main_img_about.png);
+  }
+}
+
+.description-about {
+  display: flex;
+  justify-content: space-between;
+
+  // .description-about__title
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+
+  // .description-about__text
+  &__text {
+    font-size: 14px;
+    line-height: 16 / 14 * 100%;
+    flex: 1 1 auto;
+  }
+
+  // .description-about__photo
+  &__photo {
+    width: 180px;
+    height: 220px;
+    background: url(../../images/main_img_about.png);
+  }
+
+  // .desription-about__left
+  &__left {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+.table-about {
+  // .table-about__item
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 40px 30px;
+    width: 600px;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    &:last-child {
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+      border-left: 1px solid #000;
+    }
+  }
+
+  // .table-about__number
+  &__number {
+    margin-right: 32px;
+  }
+}
+
+.ticket-about {
+  border: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  // .ticket-about__main
+  &__main {
+  }
+
+  // .ticket-about__img
+  &__img {
+    margin-left: 110px;
+  }
+}
+.main-ticket {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  // .main-ticket__content
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  // .main-ticket__title
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    text-transform: uppercase;
+    padding: 40px 0px 0px 40px;
+    width: 450px;
+  }
+
+  // .main-ticket__text
+  &__text {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 16 / 14 * 100%;
+    width: 450px;
+  }
+
+  // .main-tickets__grid
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0px 0px 40px 40px;
+    column-gap: 75px;
+  }
+}
+
+.item-ticket {
+  // .item-ticket__title
+  &__title {
+    font-weight: 700;
+    font-size: 84px;
+    text-transform: uppercase;
+  }
+
+  // .item-ticket__text
+  &__text {
+    font-size: 14px;
+    line-height: 16 / 14 * 100%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+.running-string {
+  // .running-string__marquee
+  &__marquee {
+    font-weight: 700;
+    font-size: 84px;
+    line-height: 101 / 84 * 100%;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+.about {
+  // .about__faq
+}
+.faq-about {
+  display: flex;
+  justify-content: space-between;
+  // .faq-about__body
+  &__body {
+  
+  }
+
+  // .faq-about__content
+
+  &__content {
+  }
+
+  // .faq-about__title
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+
+  // .faq-about__text
+  &__text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 16 / 14 * 100%;
+    margin-top: 25px;
+    width: 430px;
+  }
+
+  // .faq-about__img
+
+  &__img {
+    width: 204px;
+    height: 204px;
+    margin-top: 85px;
+  }
+
+  // .faq-about__table
+
+  &__table {
+  }
+}
