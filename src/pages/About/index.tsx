@@ -4,6 +4,7 @@ import Marquee from "react-double-marquee";
 import { FaqItem } from "../../components/FaqItem/FaqItem";
 import hash_code from "../../images/hash_code.png";
 import about__img from "../../images/about__img.png";
+import loop_img from "../../images/loop_img.png"
 import "./index.scss";
 
 const About = () => {
@@ -35,43 +36,43 @@ const About = () => {
             <div className="description-about__text">
               Design is a complex work
             </div>
-            <div className="description-about__photo"></div>
+            <img className="description-about__photo" src={loop_img} alt="loop_img"/>
           </div>
           <div className="description-about__table table-about">
             <div className="table-about__item">
               <div className="table-about__number">01</div>
               <div className="table-about__text">
-                BRIEF AND Competitor analysis
+                Brief and Competitor analysis
               </div>
             </div>
             <div className="table-about__item">
-              <div className="table-about__number">01</div>
+              <div className="table-about__number">02</div>
               <div className="table-about__text">
-                BRIEF AND Competitor analysis
+              Research&Collecting references
               </div>
             </div>
             <div className="table-about__item">
-              <div className="table-about__number">01</div>
+              <div className="table-about__number">03</div>
               <div className="table-about__text">
-                BRIEF AND Competitor analysis
+              Prototyping
               </div>
             </div>
             <div className="table-about__item">
-              <div className="table-about__number">01</div>
+              <div className="table-about__number">04</div>
               <div className="table-about__text">
-                BRIEF AND Competitor analysis
+              Visual Design
               </div>
             </div>
             <div className="table-about__item">
-              <div className="table-about__number">01</div>
+              <div className="table-about__number">05</div>
               <div className="table-about__text">
-                BRIEF AND Competitor analysis
+              Responsive Versions
               </div>
             </div>
             <div className="table-about__item">
-              <div className="table-about__number">01</div>
+              <div className="table-about__number">06</div>
               <div className="table-about__text">
-                BRIEF AND Competitor analysis
+              Design review
               </div>
             </div>
           </div>
@@ -125,7 +126,6 @@ const About = () => {
             <img className="faq-about__img" src={about__img} alt="about__img" />
           </div>
           <div className="faq-about__table">
-            <FaqItem />
             <FaqItem />
             <FaqItem />
             <FaqItem />

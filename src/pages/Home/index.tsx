@@ -3,12 +3,19 @@ import arrow_link from "../../icons/link-arrow.svg";
 import arrow from "../../icons/arrow.svg";
 import slider_img_1 from "../../images/slider_img_1.jpg";
 import slider_img_2 from "../../images/slider_img_2.jpg";
-import about_img_01 from "../../images/about_img_01.png";
-import "./style/Home.scss";
+import star__img from "../../images/star_img.png";
+import about__main from "../../images/about_main.png";
+import "./index.scss";
 import { NavLink } from "react-router-dom";
+import client_img_01 from "../../images/client_img_01.png";
+import client_img_02 from "../../images/client_img_02.png";
+import client_img_03 from "../../images/client_img_03.png";
+import client_img_04 from "../../images/client_img_04.png";
+import client_img_05 from "../../images/client_img_05.png";
+import client_img_06 from "../../images/client_img_06.png";
+import { ClientGirdItem } from "../../components/ClinetGridItem/ClientGirdItem";
 
 const Home = () => {
-
   return (
     <main className="main">
       <section className="main__header main-header">
@@ -22,6 +29,7 @@ const Home = () => {
                 I create website and application design
               </div>
               <img src={arrow_link} alt="arrow_link" />
+              <img src={star__img} alt="star" className="offer-header__img" />
             </div>
             <div className="main-header__img"></div>
           </div>
@@ -103,10 +111,7 @@ const Home = () => {
             </div>
             <div className="about-body__slider about-slider">
               <div className="about-slider__elem">
-                <img src={about_img_01} alt="slider_img_1" />
-              </div>
-              <div className="about-slider__elem">
-                <img src={about_img_01} alt="about_img_01" />
+                <img src={about__main} alt="about__main" />
               </div>
             </div>
           </div>
@@ -116,17 +121,19 @@ const Home = () => {
         <div className="main__container">
           <div className=" clients-main__title">clients</div>
           <div className=" clients-main__grid clients-grid">
+            <ClientGirdItem img={client_img_01} />
+            <ClientGirdItem img={client_img_02} />
             <div className="clients-grid__item _empty-clients-grid-item">
               THIS IS THE PLACE FOR YOU
             </div>
-            <div className="clients-grid__item"></div>
-            <div className="clients-grid__item"></div>
-            <div className="clients-grid__item"></div>
-            <div className="clients-grid__item"></div>
-            <div className="clients-grid__item"></div>
-            <div className="clients-grid__item"></div>
-            <div className="clients-grid__item"></div>
-            <div className="clients-grid__item"></div>
+            <div className="clients-grid__item _empty-clients-grid-item">
+              OR, IF YOU LIKE - IT
+            </div>
+            <ClientGirdItem img={client_img_03} />
+            <ClientGirdItem img={client_img_04} />
+            <ClientGirdItem img={client_img_05} />
+            <ClientGirdItem img={client_img_06} />
+            <div className="clients-grid__item _empty-clients-grid-item"></div>
           </div>
         </div>
       </section>

@@ -25,20 +25,20 @@
 .main-about {
   margin-top: 190px;
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
 
   // .main-about__photo
   &__photo {
-    width: 140px;
-    height: 160px;
-    background: url(../../images/about_avatar.png);
+    width: 216px;
+    height: 216px;
+    background: url(../../images/eye_img.png);
   }
 
   // .main-about__content
   &__content {
     width: 300px;
-    margin-top: 85px;
+    margin-top: 240px;
+    flex: 1 1 auto;
   }
 
   // .main-about__title
@@ -58,8 +58,9 @@
   // .main-about__background
   &__background {
     width: 600px;
-    height: 400px;
-    background: url(../../images/main_img_about.png);
+    height: 620px;
+    margin-left: 107px;
+    background: url(../../images/about_main.png);
   }
 }
 
@@ -81,13 +82,6 @@
     font-size: 14px;
     line-height: 16 / 14 * 100%;
     flex: 1 1 auto;
-  }
-
-  // .description-about__photo
-  &__photo {
-    width: 180px;
-    height: 220px;
-    background: url(../../images/main_img_about.png);
   }
 
   // .desription-about__left
@@ -117,6 +111,10 @@
   // .table-about__number
   &__number {
     margin-right: 32px;
+  }
+
+  &__text{
+    letter-spacing: 1px;
   }
 }
 
@@ -200,9 +198,6 @@
   }
 }
 
-.about {
-  // .about__faq
-}
 .faq-about {
   display: flex;
   justify-content: space-between;

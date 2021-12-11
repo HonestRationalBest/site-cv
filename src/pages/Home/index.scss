@@ -1,8 +1,5 @@
-
-
 .main {
   // .main__container
-
   &__container {
     width: 1200 / 1440 * 100%;
     margin: 0px auto;
@@ -41,12 +38,15 @@
 
   // .main-header__img
   &__img {
-    background-image: url(../../../images/main_page.png);
+    width: 100%;
+    background-image: url(../../images/main_page.png);
     min-height: 100%;
     width: 600px;
   }
 }
 .offer-header {
+  position: relative;
+
   // .offer-header__title
   &__title {
     font-weight: bold;
@@ -55,6 +55,8 @@
     text-transform: uppercase;
     width: 540px;
     margin-bottom: 25px;
+    z-index: 1;
+    position: relative;
   }
 
   // .offer-header__text
@@ -64,6 +66,13 @@
     text-transform: uppercase;
     color: #f3f3f5;
     margin-bottom: 50px;
+  }
+
+  &__img{
+    z-index: 0;
+    top: -80px;
+    left: -83px;
+    position: absolute;
   }
 }
 
@@ -119,6 +128,9 @@
 
   &__elem {
     margin-right: 40px;
+    & img{
+      width: 100%;
+    }
   }
 }
 
@@ -153,7 +165,9 @@
       color: #fff;
       background: #000000;
       transition: all 0.3s ease 0s;
+      // cursor: url(../../images/new-cursor.png), auto  !important;
     }
+
   }
 
   // .table-services__text
@@ -236,12 +250,6 @@
 
 .clients-grid {
   margin-top: 50px;
-  &__item {
-    width: 100%;
-    background: url(../../../images/client_grid_img_01.png);
-    height: 170px;
-  }
-  
 }
 ._empty-clients-grid-item {
   background: white;

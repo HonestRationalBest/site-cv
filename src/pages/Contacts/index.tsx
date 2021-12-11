@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from "react";
-import "./style/Contacts.scss";
+import "./index.scss";
 
 interface FromDataProps {
   name: string;
