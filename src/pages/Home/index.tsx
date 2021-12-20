@@ -16,14 +16,17 @@ import client_img_06 from "../../images/client_img_06.png";
 import { ClientGirdItem } from "../../components/ClinetGridItem/ClientGirdItem";
 
 const Home = () => {
+
+  const screenWidth = document.documentElement.clientWidth;
+
   return (
     <main className="main">
       <section className="main__header main-header">
         <div className="main__container">
-          <div className="main-header__body">
+          <div className={screenWidth > 1000 ? "main-header__body" : "main-header__body tablet-body-header-main"}>
             <div className="main-header__offer offer-header">
               <h1 className="offer-header__title">
-                HELLO, My name is Angelina. I’M UI/UX DESIGNER
+                HELLO, My name is Angelina. I’M UI/UX DESIGNER  
               </h1>
               <div className="offer-header__text">
                 I create website and application design
@@ -31,7 +34,7 @@ const Home = () => {
               <img src={arrow_link} alt="arrow_link" />
               <img src={star__img} alt="star" className="offer-header__img" />
             </div>
-            <div className="main-header__img"></div>
+            {screenWidth > 1000 ? <div className="main-header__img"></div>: ""}
           </div>
         </div>
       </section>
@@ -67,25 +70,25 @@ const Home = () => {
           <div className="services-main__table table-services">
             <div className="table-services__elem">
               <div className="table-services__text">Landing page</div>
-              <div className="table-services__text">from 120$</div>
+              <div className="table-services__price">from 120$</div>
             </div>
             <div className="table-services__elem">
               <div className="table-services__text">Online store</div>
-              <div className="table-services__text">from 240$</div>
+              <div className="table-services__price">from 240$</div>
             </div>
             <div className="table-services__elem">
               <div className="table-services__text">Corporate website</div>
-              <div className="table-services__text">from 240$</div>
+              <div className="table-services__price">from 240$</div>
             </div>
             <div className="table-services__elem">
               <div className="table-services__text">Application</div>
-              <div className="table-services__text">from 280$</div>
+              <div className="table-services__price">from 280$</div>
             </div>
             <div className="table-services__elem">
               <div className="table-services__text">
                 Creatives for social networks
               </div>
-              <div className="table-services__text">from 40$</div>
+              <div className="table-services__price">from 40$</div>
             </div>
           </div>
         </div>
@@ -109,10 +112,7 @@ const Home = () => {
                 </div>
               </NavLink>
             </div>
-            <div className="about-body__slider about-slider">
-              <div className="about-slider__elem">
-                <img src={about__main} alt="about__main" />
-              </div>
+            <div className="about-body__img">
             </div>
           </div>
         </div>

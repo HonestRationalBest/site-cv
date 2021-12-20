@@ -1,5 +1,5 @@
 import React from "react";
-import "./style/Footer.scss";
+import "./Footer.scss";
 import arrow from "../../icons/white_arrow.svg";
 import { NavLink } from "react-router-dom";
 

@@ -1,9 +1,42 @@
+$maxWidthContainer: 1270;
+
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    //Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} *
+          ((100vw - 320px) / #{$maxWidthContainer - 320})
+      );
+    }
+  } @else if $type==2 {
+    //Только если больше контейнера
+    #{$property}: $startSize + px;
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+      );
+    }
+  } @else {
+    //Всегда
+    #{$property}: calc(
+      #{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+    );
+  }
+}
+
 .about {
   // .about__container
   &__container {
     width: 1200 / 1440 * 100%;
     margin: 0px auto;
-    margin-left: 220px;
+    margin-left: 210 / 1440 * 100%;
+    @media (max-width: 1050px) {
+      margin-left: auto;
+      width: 1380 / 1440 * 100%;
+    }
   }
 
   &__description {
@@ -26,11 +59,14 @@
   margin-top: 190px;
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
 
   // .main-about__photo
   &__photo {
     width: 216px;
     height: 216px;
+    position: absolute;
     background: url(../../images/eye_img.png);
   }
 
@@ -39,6 +75,7 @@
     width: 300px;
     margin-top: 240px;
     flex: 1 1 auto;
+    margin-left: 115px;
   }
 
   // .main-about__title
@@ -57,10 +94,15 @@
 
   // .main-about__background
   &__background {
-    width: 600px;
     height: 620px;
-    margin-left: 107px;
-    background: url(../../images/about_main.png);
+    width: 100%;
+    @media (max-width: 1050px) {
+      height: 520px;
+      width: 500px;
+    }
+    flex: 0 0 auto;
+    // margin-left: 107px;
+    background: url(../../images/about_main.png) no-repeat right right;
   }
 }
 
@@ -113,7 +155,7 @@
     margin-right: 32px;
   }
 
-  &__text{
+  &__text {
     letter-spacing: 1px;
   }
 }
@@ -203,7 +245,6 @@
   justify-content: space-between;
   // .faq-about__body
   &__body {
-  
   }
 
   // .faq-about__content
