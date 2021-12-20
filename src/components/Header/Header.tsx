@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
 import { useLocation } from "react-router-dom";
-import hamburger from "../../icons/hamburger.svg";
+import { ReactComponent as Hamburger } from "../../icons/hamburger.svg";
 
 type TextColor = "white" | "black";
 
@@ -87,7 +87,7 @@ export const Header = () => {
               <NavLink to="/contacts">Contact</NavLink>
             </div>
           ) : (
-            <img src={hamburger} alt="hamburger" className="body-header__hamburger" onClick={()=>setMenuOpen(!openMenu)}/>
+            <Hamburger onClick={()=>setMenuOpen(!openMenu)} className="body-header__hamburger" fill="#000" />
           )}
         </div>
       </div>
