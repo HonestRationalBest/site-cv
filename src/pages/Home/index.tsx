@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import arrow_link from "../../icons/link-arrow.svg";
+import { ReactComponent as SliderArrow } from "../../icons/slider_arrow.svg";
 import arrow from "../../icons/arrow.svg";
 import slider_img_1 from "../../images/slider_img_1.jpg";
 import slider_img_2 from "../../images/slider_img_2.jpg";
@@ -13,28 +14,55 @@ import client_img_03 from "../../images/client_img_03.png";
 import client_img_04 from "../../images/client_img_04.png";
 import client_img_05 from "../../images/client_img_05.png";
 import client_img_06 from "../../images/client_img_06.png";
+import client_img_07 from "../../images/client_img_07.png";
 import { ClientGirdItem } from "../../components/ClinetGridItem/ClientGirdItem";
+//@ts-ignore
+import ItemsCarousel from "react-items-carousel";
+import { ReactComponent as Arrow } from "../../icons/white_arrow.svg";
 
 const Home = () => {
-
+  let [activeItem, setActiveItem] = useState(0);
+  const countSlides = 5;
   const screenWidth = document.documentElement.clientWidth;
+
+  const changeActiveItem = (type: string) => {
+    if (type === "+" && countSlides - 2 > activeItem) {
+      setActiveItem(++activeItem);
+    }
+    if (type === "-" && activeItem > 0) {
+      setActiveItem(--activeItem);
+    }
+  };
 
   return (
     <main className="main">
       <section className="main__header main-header">
         <div className="main__container">
-          <div className={screenWidth > 1000 ? "main-header__body" : "main-header__body tablet-body-header-main"}>
+          <div
+            className={
+              screenWidth > 1000
+                ? "main-header__body"
+                : "main-header__body tablet-body-header-main"
+            }
+          >
             <div className="main-header__offer offer-header">
-              <h1 className="offer-header__title">
-                HELLO, My name is Angelina. I’M UI/UX DESIGNER  
+              <h1
+                className={
+                  screenWidth > 700
+                    ? "offer-header__title"
+                    : "offer-header__title"
+                }
+              >
+                Hello, My name is Angelina. I’m UI/UX designer
               </h1>
               <div className="offer-header__text">
                 I create website and application design
               </div>
-              <img src={arrow_link} alt="arrow_link" />
-              <img src={star__img} alt="star" className="offer-header__img" />
+              <button className="offer-header__button">
+                Let's talk <Arrow stroke="#fff" />
+              </button>
             </div>
-            {screenWidth > 1000 ? <div className="main-header__img"></div>: ""}
+            {screenWidth > 1000 ? <div className="main-header__img"></div> : ""}
           </div>
         </div>
       </section>
@@ -47,21 +75,72 @@ const Home = () => {
               </div>
               <div className="cases-offer__title">Cases</div>
             </div>
-            <NavLink to="/cases">
-              <div className="cases-main__link">
-                View all
-                <img src={arrow} alt="arrow" />
-              </div>
-            </NavLink>
+            {/* <NavLink to="/cases"> */}
+            <div className="cases-main__link">
+              {activeItem === 0 ? (
+                <SliderArrow
+                  stroke="#C5C5C5"
+                  className={"cases-main__left"}
+                  onClick={() => changeActiveItem("-")}
+                />
+              ) : (
+                <SliderArrow
+                  stroke="#171717"
+                  className={"cases-main__left"}
+                  onClick={() => changeActiveItem("-")}
+                />
+              )}
+              {countSlides - 2 === activeItem ? (
+                <SliderArrow
+                  stroke="#C5C5C5"
+                  className={
+                    countSlides === activeItem
+                      ? "cases-main__right _disabled"
+                      : "cases-main__right"
+                  }
+                  onClick={() => changeActiveItem("+")}
+                />
+              ) : (
+                <SliderArrow
+                  stroke="#171717"
+                  className={
+                    countSlides === activeItem
+                      ? "cases-main__right _disabled"
+                      : "cases-main__right"
+                  }
+                  onClick={() => changeActiveItem("+")}
+                />
+              )}
+            </div>
+            {/* </NavLink> */}
           </div>
-          <div className="cases-main__slider cases-slider">
+          <ItemsCarousel
+            activeItemIndex={activeItem}
+            // requestToChangeActive={(index: any)=>setActiveItem(index)}
+            numberOfCards={screenWidth < 650 ? 1 : 2}
+            showSlither={true}
+            gutter={20}
+            firstAndLastGutter={false}
+            freeScrolling={false}
+            activePosition={"left"}
+            className="cases-main__slider cases-slider"
+          >
             <div className="cases-slider__elem">
               <img src={slider_img_1} alt="slider_img_1" />
             </div>
             <div className="cases-slider__elem">
               <img src={slider_img_2} alt="slider_img_2" />
             </div>
-          </div>
+            <div className="cases-slider__elem">
+              <img src={slider_img_2} alt="slider_img_2" />
+            </div>
+            <div className="cases-slider__elem">
+              <img src={slider_img_2} alt="slider_img_2" />
+            </div>
+            <div className="cases-slider__elem">
+              <img src={slider_img_1} alt="slider_img_1" />
+            </div>
+          </ItemsCarousel>
         </div>
       </section>
       <section className="main__services services-main">
@@ -100,40 +179,56 @@ const Home = () => {
               <div className="about-body__title">About me</div>
               <div className="about-body__text">
                 I’m a ux/ui designer based in Poland. Core competencies are the
-                creation of design for websites and applications.{" "}
+                creation of design for websites and applications.
               </div>
               <div className="about-body__text">
                 I have experience working in two agencies Alavir and 69pixels,
                 which are located in Belarus.
               </div>
               <NavLink to="/about">
-                <div className="about-body__button">
-                  Read more <img src={arrow} alt="arrow" />
-                </div>
+                <button className="about-body__button">
+                  Read more <Arrow stroke="#000" />
+                </button>
               </NavLink>
             </div>
-            <div className="about-body__img">
-            </div>
+            <div className="about-body__img"></div>
           </div>
         </div>
       </section>
       <section className="main__clients clients-main">
         <div className="main__container">
-          <div className=" clients-main__title">clients</div>
+          <div className=" clients-main__title">Clients</div>
           <div className=" clients-main__grid clients-grid">
             <ClientGirdItem img={client_img_01} />
             <ClientGirdItem img={client_img_02} />
-            <div className="clients-grid__item _empty-clients-grid-item">
-              THIS IS THE PLACE FOR YOU
-            </div>
-            <div className="clients-grid__item _empty-clients-grid-item">
-              OR, IF YOU LIKE - IT
-            </div>
+            <NavLink to="/contacts">
+              <div className="clients-grid__item _empty-clients-grid-item">
+                THIS IS THE PLACE FOR YOU
+              </div>
+            </NavLink>
+            <NavLink to="/contacts">
+              <div className="clients-grid__item _empty-clients-grid-item">
+                OR, IF YOU LIKE - IT
+              </div>
+            </NavLink>
             <ClientGirdItem img={client_img_03} />
-            <ClientGirdItem img={client_img_04} />
+            <ClientGirdItem img={client_img_07} />
             <ClientGirdItem img={client_img_05} />
             <ClientGirdItem img={client_img_06} />
-            <div className="clients-grid__item _empty-clients-grid-item"></div>
+            <NavLink to="/contacts">
+              <div className="clients-grid__item _empty-clients-grid-item">
+                OR, IF YOU LIKE - IT
+              </div>
+            </NavLink>
+          </div>
+        </div>
+      </section>
+      <section className="main__quote quote-main">
+        <div className="main__container">
+          <div className="quote-main__text">
+            “My mission as a designer is to create memorable and convenient
+            products. Approach the solution of each product respectfully and
+            uniquely”
           </div>
         </div>
       </section>

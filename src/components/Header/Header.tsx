@@ -3,15 +3,18 @@ import { NavLink } from "react-router-dom";
 import "./Header.scss";
 import { useLocation } from "react-router-dom";
 import { ReactComponent as Hamburger } from "../../icons/hamburger.svg";
+import blackLogo from "../../images/logo_black.png";
+import whiteLogo from "../../images/logo_white.png";
+import { ReactComponent as Cross } from "../../icons/cross.svg";
+import * as Scroll from "react-scroll";
 
 type TextColor = "white" | "black";
 
 export const Header = () => {
   const [menuTextColor, setMenuTextColor] = useState<TextColor>();
-  const [openMenu, setMenuOpen] = useState<boolean>(false)
+  const [openMenu, setMenuOpen] = useState<boolean>(false);
   const location = useLocation();
   const screenWidth = document.documentElement.clientWidth;
-
 
   const handleNavigation = useCallback(
     (e) => {
@@ -35,6 +38,10 @@ export const Header = () => {
     [location]
   );
 
+  const scrollToTop = () => {
+    Scroll.animateScroll.scrollToTop();
+  };
+
   useEffect(() => {
     if (location.pathname === "/") {
       setMenuTextColor("white");
@@ -45,24 +52,28 @@ export const Header = () => {
   }, [handleNavigation, location]);
 
   return (
-    <header className={menuTextColor === "black" ? "header _active" : "header"}>
+    <header className="header">
       <div className="header__container">
-        <div className="header__body body-header">
+        <div className={menuTextColor === "black" ? "header__body body-header _active_body" :"header__body body-header"}>
           <div className="body-header__languages header-languages">
             <ul className="header-languages__list">
               <li className="header-languages__item">EN </li>
-              <li className="header-languages__item _not-active">PL </li>
+              <li className="header-languages__item _not-active">RU </li>
             </ul>
           </div>
           {screenWidth > 700 ? (
             <div className="body-header__main header-main">
               <ul className="header-main__list">
                 <li className="header-main__item">
-                  <NavLink to="/cases">Cases</NavLink>
+                  <NavLink to="/cases" onClick={scrollToTop}>
+                    Cases
+                  </NavLink>
                 </li>
                 {screenWidth > 1050 ? (
                   <li className="header-main__item">
-                    <NavLink to="/about">About</NavLink>
+                    <NavLink to="/about" onClick={scrollToTop}>
+                      About
+                    </NavLink>
                   </li>
                 ) : (
                   ""
@@ -73,21 +84,82 @@ export const Header = () => {
             ""
           )}
           <div className="body-header__logo">
-            <NavLink to="/">Paranoja</NavLink>
+            <NavLink to="/" onClick={scrollToTop}>
+              {menuTextColor === "black" ? (
+                <img src={blackLogo} alt="blackLogo" />
+              ) : (
+                <img src={whiteLogo} alt="whiteLogo" />
+              )}
+            </NavLink>
           </div>
           {screenWidth > 700 ? (
             <div className="body-header__contacts">
               {screenWidth < 1050 ? (
-                <NavLink to="/about" className="body-header__contacts-about">
+                <NavLink
+                  to="/about"
+                  className="body-header__contacts-about"
+                  onClick={scrollToTop}
+                >
                   About
                 </NavLink>
               ) : (
                 ""
               )}
-              <NavLink to="/contacts">Contact</NavLink>
+              <NavLink to="/contacts" onClick={scrollToTop}>
+                Contact
+              </NavLink>
             </div>
           ) : (
-            <Hamburger onClick={()=>setMenuOpen(!openMenu)} className="body-header__hamburger" fill="#000" />
+            <div
+              className="body-header__hamburger__wrapper"
+              onClick={() => setMenuOpen(!openMenu)}
+            >
+              MENU
+              <Hamburger
+                className="body-header__hamburger"
+                fill={menuTextColor === "black" ? "#000" : "#fff"}
+              />
+            </div>
+          )}
+          {openMenu && (
+            <div
+              className={
+                menuTextColor === "black"
+                  ? "body-header__menu menu-header _white"
+                  : "body-header__menu menu-header"
+              }
+            >
+              <Cross
+                fill="#A0A0A0"
+                className="menu-header__cross"
+                onClick={() => setMenuOpen(!openMenu)}
+              />
+              <div className="menu-header__list">
+                <ul>
+                  <li onClick={() => setMenuOpen(!openMenu)}>
+                    <NavLink to="/" onClick={scrollToTop}>
+                      MAIN
+                    </NavLink>
+                  </li>
+                  <li onClick={() => setMenuOpen(!openMenu)}>
+                    <NavLink to="/cases" onClick={scrollToTop}>
+                      CASES
+                    </NavLink>
+                  </li>
+                  <li onClick={() => setMenuOpen(!openMenu)}>
+                    <NavLink to="/about" onClick={scrollToTop}>
+                      ABOUT
+                    </NavLink>
+                  </li>
+                  <li onClick={() => setMenuOpen(!openMenu)}>
+                    <NavLink to="/contacts" onClick={scrollToTop}>
+                      CONTACT
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+              <div className="menu-header__footer">MENU</div>
+            </div>
           )}
         </div>
       </div>

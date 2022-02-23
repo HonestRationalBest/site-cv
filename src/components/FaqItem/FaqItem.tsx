@@ -10,7 +10,7 @@ export const FaqItem = () => {
       <div className="item__title">
         Do I really need a website design?
         {isActive ? (
-          <>
+          <div className="item__textwrapper">
             <div className="item__text">
               We should think through all the elements that make up the first
               impression of the site so that they support the image you create.
@@ -20,7 +20,7 @@ export const FaqItem = () => {
               Your website or social network is your face on the Internet. Let's
               make it professional and trusting.
             </div>
-          </>
+          </div>
         ) : (
           ""
         )}
