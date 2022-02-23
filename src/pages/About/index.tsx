@@ -5,7 +5,7 @@ import { FaqItem } from "../../components/FaqItem/FaqItem";
 import hash_code from "../../images/hash_code.png";
 import about__img from "../../images/about__img.png";
 import main__about_img from "../../images/main_about_img.png";
-import main_about_picture from "../../images/main_about_picture.png";
+import main_about_picture from "../../images/main__about_picture.png";
 import about_main from "../../images/about_main.png";
 import eye from "../../images/eye_img.png";
 import loop_img from "../../images/loop_img.png";
@@ -13,6 +13,27 @@ import "./index.scss";
 
 const About = () => {
   const screenWidth = document.documentElement.clientWidth;
+
+  const questionsData = [
+    {
+      text: `We should think through all the elements that make up the first impression of the site so that they support the image you create. You will not achieve this effect with the help of templates.
+      Your website or social network is your face on the Internet. 
+      Let's make it professional and trusting.`,
+      title: "Do I really need a website design?",
+    },
+    {
+      text: `In fact, it will be great, wonderful and amazing. Check it.`,
+      title: "Why should I choose you?",
+    },
+    {
+      text: `If at the moment you do not have funds for development, but the product requires the intervention of a designer, we can always discuss a solution that suits you.`,
+      title: "Startups, let's do it.",
+    },
+    {
+      text: `Noting i'm really bad designer and i forgot to paste the text there:(`,
+      title: "When do I need to provide materials for the site?",
+    },
+  ];
 
   return (
     <main className="about">
@@ -36,9 +57,11 @@ const About = () => {
             <div className="main-about__photo">
               <img src={main__about_img} alt="main__about_img" />
             </div>
-            {screenWidth > 600 && <div className="main-about__picture">
-              <img src={main_about_picture} alt="main_about_picture" />
-            </div>}
+            {screenWidth > 600 && (
+              <div className="main-about__picture">
+                <img src={main_about_picture} alt="main_about_picture" />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -46,7 +69,7 @@ const About = () => {
         <div className="container">
           <div className="description-about">
             <div className="description-about__left">
-              <div className="description-about__title">how i’m work?</div>
+              <div className="description-about__title">How I’m Work?</div>
               <div className="description-about__text">
                 Design is a complex work
               </div>
@@ -84,41 +107,45 @@ const About = () => {
           </div>
         </div>
       </section>
-      <div className="container">
-        <section className="about__ticket ticket-about">
-          <div className="ticket-about__main main-ticket">
-            <div className="main-ticket__content">
-              <div className="main-ticket__title">Formula For Success</div>
-              <div className="main-ticket__text">
-                A designer is also a marketer and a psychologist who, based on
-                the predicted behavior of users, is able to select effective
-                elements to achieve the company's goals.
+      <section className="about__ticket ticket-about">
+        <div className="container">
+          <div className="ticket-about__content">
+            <div className="ticket-about__main main-ticket">
+              <div className="main-ticket__content">
+                <div className="main-ticket__title">Formula For Success</div>
+                <div className="main-ticket__text">
+                  A designer is also a marketer and a psychologist who, based on
+                  the predicted behavior of users, is able to select effective
+                  elements to achieve the company's goals.
+                </div>
+              </div>
+              <div className="main-ticket__grid">
+                <div className="main-ticket__item item-ticket">
+                  <div className="item-ticket__title">01</div>
+                  <div className="item-ticket__text">My design and support</div>
+                </div>
+                <div className="main-ticket__item item-ticket">
+                  <div className="item-ticket__title">02</div>
+                  <div className="item-ticket__text">
+                    Your efforts afterwards
+                  </div>
+                </div>
+                <div className="main-ticket__item item-ticket">
+                  <div className="item-ticket__title">110%</div>
+                  <div className="item-ticket__text">Growing business</div>
+                </div>
               </div>
             </div>
-            <div className="main-ticket__grid">
-              <div className="main-ticket__item item-ticket">
-                <div className="item-ticket__title">01</div>
-                <div className="item-ticket__text">My design and support</div>
-              </div>
-              <div className="main-ticket__item item-ticket">
-                <div className="item-ticket__title">02</div>
-                <div className="item-ticket__text">Your efforts afterwards</div>
-              </div>
-              <div className="main-ticket__item item-ticket">
-                <div className="item-ticket__title">110%</div>
-                <div className="item-ticket__text">Growing business</div>
-              </div>
-            </div>
+            {screenWidth > 900 && (
+              <img
+                className="ticket-about__img"
+                src={hash_code}
+                alt="hash_code"
+              />
+            )}
           </div>
-          {screenWidth > 900 && (
-            <img
-              className="ticket-about__img"
-              src={hash_code}
-              alt="hash_code"
-            />
-          )}
-        </section>
-      </div>
+        </div>
+      </section>
       <section className="about__running-string running-string">
         <div className="running-string__marquee">
           <Marquee direction="left" speed="0.3">
@@ -129,23 +156,21 @@ const About = () => {
       <section className="about__faq">
         <div className="container">
           <div className="faq-about">
-          <div className="faq-about__body">
-            <div className="faq-about__title">Need To Think?</div>
-            <div className="faq-about__text">
-              Marketing research has proven that our brain quickly and
-              unconsciously combines several sources of information into a
-              single whole at once, determining whether we like the landing page
-              or not.
+            <div className="faq-about__body">
+              <div className="faq-about__title">Need To Think?</div>
+              <div className="faq-about__text">
+                Marketing research has proven that our brain quickly and
+                unconsciously combines several sources of information into a
+                single whole at once, determining whether we like the landing
+                page or not.
+              </div>
+            </div>
+            <div className="faq-about__table">
+              {questionsData.map((elem) => (
+                <FaqItem {...elem} />
+              ))}
             </div>
           </div>
-          <div className="faq-about__table">
-            <FaqItem />
-            <FaqItem />
-            <FaqItem />
-            <FaqItem />
-          </div>
-          </div>
-          
         </div>
       </section>
     </main>
