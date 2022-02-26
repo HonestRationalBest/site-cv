@@ -5,18 +5,18 @@ import chevron from "../../icons/chevron_down.svg"
 
 import "./index.scss";
 
-interface ElementProps{
-    Img: Node;
+export interface ElementProps{
+    src: string;
+    alt: string;
 }
 
-const Element:React.FC<ElementProps> = ({Img}) => {
+const Element:React.FC<ElementProps> = ({src, alt}) => {
 
   const screenWidth = document.documentElement.clientWidth;
 
   return (
-    <div className="cases">
-        {/* <Img /> */}
-        
+    <div className="creative">
+        <img src={src} alt={alt} />
     </div>
   );
 };

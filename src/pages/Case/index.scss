@@ -1,0 +1,48 @@
+.case {
+    margin-top: 190px;
+    margin-bottom: 170px;
+
+    &__container {
+        width: 1200 / 1440 * 100%;
+        margin: 0px auto;
+        margin-left: 210 / 1440 * 100%;
+
+        @media (max-width: 1050px) {
+            margin-left: auto;
+            width: 1380 / 1440 * 100%;
+        }
+
+        @media (max-width: 900px) {
+            width: 688 / 768 * 100%;
+        }
+    }
+
+    &__return {
+        width: 210px;
+
+        img {
+            transform: rotate(90deg);
+            width: 28px;
+            height: 13px;
+            margin-bottom: 3px;
+        }
+    }
+
+    &__title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 48px;
+        width: 450px;
+        margin-top: 50px;
+    }
+}
+
+.return-link {
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+}

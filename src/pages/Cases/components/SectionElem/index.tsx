@@ -1,3 +1,4 @@
+import * as Scroll from 'react-scroll';
 import { Link } from "react-router-dom";
 
 import link_arrow from "../../../../icons/link-arrow.svg";
@@ -21,6 +22,11 @@ export const SectionElem: React.FC<SectionElemProps> = ({
   to,
   isReverse,
 }) => {
+
+    const scrollToTop = () => {
+        Scroll.animateScroll.scrollToTop()
+      }
+
   return (
     <div className={isReverse ? "elem _change-direction" : "elem"}>
       <img src={img} alt={alt} className="elem__img" />
@@ -33,7 +39,7 @@ export const SectionElem: React.FC<SectionElemProps> = ({
         </a>
       )}
       {!link && to && (
-        <Link to={to}>
+        <Link to={to} onClick={scrollToTop}>
           <div className="elem__link">
             <div className="elem__title">{title}</div>
             <button className="elem__button">

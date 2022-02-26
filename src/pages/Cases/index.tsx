@@ -1,11 +1,6 @@
 import { SectionElem, SectionElemTablet } from "./components";
 import { casesData, casesDataTablet } from "./constants";
 
-import tablet_01 from "../../images/tablet_01.png";
-import tablet_02 from "../../images/tablet_02.png";
-import tablet_03 from "../../images/tablet_03.png";
-import tablet_04 from "../../images/tablet_04.png";
-
 import "./index.scss";
 
 const Cases = () => {
