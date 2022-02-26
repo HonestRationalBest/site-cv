@@ -1,0 +1,103 @@
+export const casesData = [
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645882573/case_01_wm3s97.png",
+      alt: "case_01",
+      link: "https://www.behance.net/gallery/129543095/Kjaer-Weis-redesign-website",
+      title: "KJAERWEIST - online store",
+      isReverse: false,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645882573/case_02_tkwj8u.png",
+      alt: "case_02",
+      link: "https://www.behance.net/gallery/131807507/WEB-SITE-FOR-STUDIO",
+      title: "FIREART - REDESIGN",
+      isReverse: true,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645882574/case_03_jpggmk.png",
+      alt: "case_03",
+      title: "creatives for social networks",
+      to: "/cases/networks_01",
+      isReverse: false,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645882573/case_04_eig9j0.png",
+      alt: "case_04",
+      link: "https://www.behance.net/gallery/135525347/WorkHub-website-design",
+      title: "WORKHUB - job search",
+      isReverse: true,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645882573/case_05_thybbx.png",
+      alt: "case_05",
+      to: "/cases/networks_02",
+      title: "SOcial media for Edme",
+      isReverse: false,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645882573/case_06_k7u45y.png",
+      alt: "case_06",
+      link: "https://dribbble.com/shots/16503583-ASO-for-medical-center",
+      title: "ASO for appstore",
+      isReverse: true,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645882573/case_07_jbbxga.png",
+      alt: "case_07",
+      link: "https://www.behance.net/gallery/118590177/UXUI-Sberhouse-app",
+      title: "SBERCODE - WEB APP",
+      isReverse: false,
+    },
+  ];
+
+export const casesDataTablet = [
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645882573/case_01_wm3s97.png",
+      alt: "case_01",
+      link: "https://www.behance.net/gallery/129543095/Kjaer-Weis-redesign-website",
+      title: "KJAERWEIST - online store",
+      isReverse: false,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645889324/tablet_02_vjjuep.png",
+      alt: "case_02",
+      link: "https://www.behance.net/gallery/131807507/WEB-SITE-FOR-STUDIO",
+      title: "FIREART - REDESIGN",
+      isReverse: true,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645884824/Frame_77_qjsxl2.png",
+      alt: "case_03",
+      title: "creatives for social networks",
+      to: "/cases/networks_01",
+      isReverse: false,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645882573/case_04_eig9j0.png",
+      alt: "case_04",
+      link: "https://www.behance.net/gallery/135525347/WorkHub-website-design",
+      title: "WORKHUB - job search",
+      isReverse: true,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645889379/Group_190623_2_c2hacn.png",
+      alt: "case_05",
+      to: "/cases/networks_02",
+      title: "SOcial media for Edme",
+      isReverse: false,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645884824/Group_190624_mwmee2.png",
+      alt: "case_06",
+      link: "https://dribbble.com/shots/16503583-ASO-for-medical-center",
+      title: "ASO for appstore",
+      isReverse: true,
+    },
+    {
+      img: "https://res.cloudinary.com/ds8hydjea/image/upload/v1645884824/Group_190623_uyup7y.png",
+      alt: "case_07",
+      link: "https://www.behance.net/gallery/118590177/UXUI-Sberhouse-app",
+      title: "SBERCODE - WEB APP",
+      isReverse: false,
+    },
+  ];

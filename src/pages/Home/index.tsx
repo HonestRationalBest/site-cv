@@ -18,6 +18,7 @@ import client_img_07 from "../../images/client_img_07.png";
 import { ClientGirdItem } from "../../components/ClinetGridItem/ClientGirdItem";
 //@ts-ignore
 import ItemsCarousel from "react-items-carousel";
+import * as Scroll from 'react-scroll';
 import { ReactComponent as Arrow } from "../../icons/white_arrow.svg";
 
 const Home = () => {
@@ -33,6 +34,10 @@ const Home = () => {
       setActiveItem(--activeItem);
     }
   };
+
+  const scrollToTop = () => {
+    Scroll.animateScroll.scrollToTop()
+  }
 
   return (
     <main className="main">
@@ -185,7 +190,7 @@ const Home = () => {
                 I have experience working in two agencies Alavir and 69pixels,
                 which are located in Belarus.
               </div>
-              <NavLink to="/about">
+              <NavLink to="/about" onClick={scrollToTop}>
                 <button className="about-body__button">
                   Read more <Arrow stroke="#000" />
                 </button>
@@ -201,12 +206,12 @@ const Home = () => {
           <div className=" clients-main__grid clients-grid">
             <ClientGirdItem img={client_img_01} />
             <ClientGirdItem img={client_img_02} />
-            <NavLink to="/contacts">
+            <NavLink to="/contacts" onClick={scrollToTop}>
               <div className="clients-grid__item _empty-clients-grid-item">
                 THIS IS THE PLACE FOR YOU
               </div>
             </NavLink>
-            <NavLink to="/contacts">
+            <NavLink to="/contacts" onClick={scrollToTop}>
               <div className="clients-grid__item _empty-clients-grid-item">
                 OR, IF YOU LIKE - IT
               </div>
@@ -215,7 +220,7 @@ const Home = () => {
             <ClientGirdItem img={client_img_07} />
             <ClientGirdItem img={client_img_05} />
             <ClientGirdItem img={client_img_06} />
-            <NavLink to="/contacts">
+            <NavLink to="/contacts" onClick={scrollToTop}>
               <div className="clients-grid__item _empty-clients-grid-item">
                 OR, IF YOU LIKE - IT
               </div>

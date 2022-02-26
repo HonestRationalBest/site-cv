@@ -13,15 +13,14 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <NavLink to="/contacts" onClick={scrollToTop}>
           <div className="footer__title">
+        <NavLink to="/contacts" onClick={scrollToTop}>
           <h1>
             Let's talk
             <Arrow stroke="#fff"/>
           </h1>
-          </div>
-         
         </NavLink>
+          </div>
         <div className="footer__body">
           <div className="footer__menu menu-footer">
             <div className="menu-footer__elem">
