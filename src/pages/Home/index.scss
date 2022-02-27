@@ -154,6 +154,7 @@ $maxWidthContainer: 1270;
       transition: all 0.3s ease 0s;
 
       svg {
+        transition: all 0.3s ease 0s;
         stroke: #000;
       }
     }
@@ -233,7 +234,7 @@ $maxWidthContainer: 1270;
     margin-bottom: 50px;
   }
 
-  &__table{
+  &__table {
     margin-top: 50px;
   }
 }
@@ -290,6 +291,7 @@ $maxWidthContainer: 1270;
       transition: all 0.3s ease 0s;
 
       svg {
+        transition: all 0.3s ease 0s;
         stroke: #fff;
       }
     }
@@ -344,7 +346,7 @@ $maxWidthContainer: 1270;
     gap: 15px;
     grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
 
-    a{
+    a {
       color: #000000;
     }
 

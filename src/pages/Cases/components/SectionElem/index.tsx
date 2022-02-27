@@ -27,7 +27,7 @@ export const SectionElem: React.FC<SectionElemProps> = ({
     <div className={isReverse ? "elem _change-direction" : "elem"}>
       <img src={img} alt={alt} className="elem__img" />
       {link && (
-        <a href={link} className="elem__link">
+        <a href={link} rel="noreferrer" target="_blank" className="elem__link">
           <div className="elem__title">{title}</div>
           <button className="elem__button">
             <img src={link_arrow} alt="link_arrow" />

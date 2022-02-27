@@ -32,6 +32,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 14px;
   }
 
   &__item {
@@ -76,6 +77,36 @@
     text-transform: uppercase;
     font-size: 14px;
     margin-right: 40px;
+
+    & a {
+      font-size: 14px;
+      position: relative;
+      cursor: pointer;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #000;
+      transition: width 0.3s ease-out;
+    }
+
+    a._active_body::after{
+      background-color: #fff;
+    }
+
+    a:hover:after,
+    a:focus:after {
+      width: 100%;
+    }
+
+
     @media (max-width: 1050px) {
       margin-right: 25px;
     }
@@ -121,6 +152,31 @@
     font-size: 14px;
     text-transform: uppercase;
     margin: 0px 0px 0px 130px;
+    
+    & a {
+      font-size: 14px;
+      position: relative;
+      cursor: pointer;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    a:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #000;
+      transition: width 0.3s ease-out;
+    }
+
+    a:hover:after,
+    a:focus:after {
+      width: 100%;
+    }
+
     @media (max-width: 1050px) {
       margin: 0px 25px 0px 115px;
     }

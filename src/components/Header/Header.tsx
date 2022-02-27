@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./Header.scss";
 import { useLocation } from "react-router-dom";
+
+import { scrollToTop } from "../../services";
+
 import { ReactComponent as Hamburger } from "../../icons/hamburger.svg";
+import { ReactComponent as Cross } from "../../icons/cross.svg";
 import blackLogo from "../../images/logo_black.png";
 import whiteLogo from "../../images/logo_white.png";
-import { ReactComponent as Cross } from "../../icons/cross.svg";
-import * as Scroll from "react-scroll";
+
+import "./Header.scss";
 
 type TextColor = "white" | "black";
 
@@ -38,9 +41,6 @@ export const Header = () => {
     [location]
   );
 
-  const scrollToTop = () => {
-    Scroll.animateScroll.scrollToTop();
-  };
 
   useEffect(() => {
     if (location.pathname === "/") {
