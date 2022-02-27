@@ -1,0 +1,30 @@
+.table-services {
+    &__elem {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+        border-top: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-right: 1px solid #000000;
+        color: #000000;
+        font-weight: 700;
+
+        &:last-child {
+            border-bottom: 1px solid #000000;
+            border-right: 1px solid #000000;
+            border-left: 1px solid #000000;
+        }
+
+        &:hover {
+            color: #fff;
+            background: #000000;
+            transition: all 0.5s ease 0s;
+            padding: 40px 70px;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 21 / 18 * 100%;
+    }
+}

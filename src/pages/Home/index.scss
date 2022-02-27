@@ -55,6 +55,7 @@ $maxWidthContainer: 1270;
 
   &__about {
     padding-top: 120px;
+    background: #fff;
   }
 
   &__clients {
@@ -90,6 +91,10 @@ $maxWidthContainer: 1270;
     background-image: url(../../images/main_page.png);
     min-height: 100%;
     width: 600px;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 
 }
@@ -155,14 +160,16 @@ $maxWidthContainer: 1270;
   }
 }
 
-.tablet-body-header-main {
-  display: flex;
-  width: 100%;
-  text-align: left;
+@media (max-width: 1000px) {
+  .tablet-body-header-main {
+    display: flex;
+    width: 100%;
+    text-align: left;
+  }
 }
 
-.cases-main {
 
+.cases-main {
   &__content {
     display: flex;
     justify-content: space-between;
@@ -194,7 +201,6 @@ $maxWidthContainer: 1270;
 }
 
 .cases-offer {
-
   &__text {
     font-size: 14px;
     line-height: 16 / 14 * 100%;
@@ -210,7 +216,6 @@ $maxWidthContainer: 1270;
 }
 
 .cases-slider {
-
   &__elem {
     height: 100%;
 
@@ -221,50 +226,16 @@ $maxWidthContainer: 1270;
 }
 
 .services-main {
-
   &__title {
     font-weight: 700;
     line-height: 100%;
     font-size: 48px;
     margin-bottom: 50px;
   }
-}
 
-.table-services {
-  margin-top: 50px;
-
-  &__elem {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px;
-    border-top: 1px solid #000000;
-    border-left: 1px solid #000000;
-    border-right: 1px solid #000000;
-    color: #000000;
-    font-weight: 700;
-
-    &:last-child {
-      border-bottom: 1px solid #000000;
-      border-right: 1px solid #000000;
-      border-left: 1px solid #000000;
-    }
-
-    &:hover {
-      color: #fff;
-      background: #000000;
-      transition: all 0.5s ease 0s;
-      padding: 40px 70px;
-    }
+  &__table{
+    margin-top: 50px;
   }
-
-  &__text {
-    font-size: 18px;
-    line-height: 21 / 18 * 100%;
-  }
-}
-
-.about-main {
-  background: #fff;
 }
 
 .about-body {
@@ -406,28 +377,5 @@ $maxWidthContainer: 1270;
   @media (max-width: 850px) {
     padding: 120px 0px;
 
-  }
-}
-
-._disabled .clients-grid {
-  margin-top: 50px;
-}
-
-._empty-clients-grid-item {
-  background: white;
-  border: 1px solid #000;
-  text-transform: uppercase;
-  font-size: 18px;
-  line-height: 21 / 18 * 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 170px;
-  font-weight: 700;
-  &:hover{
-    background: #6285FC;
-    color: #fff;
-    transition: all 0.3s ease 0s;
-    border: 0;
   }
 }

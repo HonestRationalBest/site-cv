@@ -1,25 +1,18 @@
-import React, { useState } from "react";
-import arrow_link from "../../icons/link-arrow.svg";
+//@ts-nocheck
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import ItemsCarousel from "react-items-carousel";
+
+import { gridData, servicesData } from "./constants";
+import { ClientGirdItem, Service } from "./components";
+import { scrollToTop } from "../../services";
+
+import { ReactComponent as Arrow } from "../../icons/white_arrow.svg";
 import { ReactComponent as SliderArrow } from "../../icons/slider_arrow.svg";
-import arrow from "../../icons/arrow.svg";
 import slider_img_1 from "../../images/slider_img_1.jpg";
 import slider_img_2 from "../../images/slider_img_2.jpg";
-import star__img from "../../images/star_img.png";
-import about__main from "../../images/about_main.png";
+
 import "./index.scss";
-import { NavLink } from "react-router-dom";
-import client_img_01 from "../../images/client_img_01.png";
-import client_img_02 from "../../images/client_img_02.png";
-import client_img_03 from "../../images/client_img_03.png";
-import client_img_04 from "../../images/client_img_04.png";
-import client_img_05 from "../../images/client_img_05.png";
-import client_img_06 from "../../images/client_img_06.png";
-import client_img_07 from "../../images/client_img_07.png";
-import { ClientGirdItem } from "../../components/ClinetGridItem/ClientGirdItem";
-//@ts-ignore
-import ItemsCarousel from "react-items-carousel";
-import * as Scroll from 'react-scroll';
-import { ReactComponent as Arrow } from "../../icons/white_arrow.svg";
 
 const Home = () => {
   let [activeItem, setActiveItem] = useState(0);
@@ -35,29 +28,13 @@ const Home = () => {
     }
   };
 
-  const scrollToTop = () => {
-    Scroll.animateScroll.scrollToTop()
-  }
-
   return (
     <main className="main">
       <section className="main__header main-header">
         <div className="main__container">
-          <div
-            className={
-              screenWidth > 1000
-                ? "main-header__body"
-                : "main-header__body tablet-body-header-main"
-            }
-          >
+          <div className="main-header__body tablet-body-header-main">
             <div className="main-header__offer offer-header">
-              <h1
-                className={
-                  screenWidth > 700
-                    ? "offer-header__title"
-                    : "offer-header__title"
-                }
-              >
+              <h1 className="offer-header__title">
                 Hello, My name is Angelina. I’m UI/UX designer
               </h1>
               <div className="offer-header__text">
@@ -67,7 +44,7 @@ const Home = () => {
                 Let's talk <Arrow stroke="#fff" />
               </button>
             </div>
-            {screenWidth > 1000 ? <div className="main-header__img"></div> : ""}
+            <div className="main-header__img"></div>
           </div>
         </div>
       </section>
@@ -152,28 +129,9 @@ const Home = () => {
         <div className="main__container">
           <div className="services-main__title">Design services</div>
           <div className="services-main__table table-services">
-            <div className="table-services__elem">
-              <div className="table-services__text">Landing page</div>
-              <div className="table-services__price">from 120$</div>
-            </div>
-            <div className="table-services__elem">
-              <div className="table-services__text">Online store</div>
-              <div className="table-services__price">from 240$</div>
-            </div>
-            <div className="table-services__elem">
-              <div className="table-services__text">Corporate website</div>
-              <div className="table-services__price">from 240$</div>
-            </div>
-            <div className="table-services__elem">
-              <div className="table-services__text">Application</div>
-              <div className="table-services__price">from 280$</div>
-            </div>
-            <div className="table-services__elem">
-              <div className="table-services__text">
-                Creatives for social networks
-              </div>
-              <div className="table-services__price">from 40$</div>
-            </div>
+            {servicesData.map((service) => (
+              <Service {...service} key={service.text} />
+            ))}
           </div>
         </div>
       </section>
@@ -204,27 +162,9 @@ const Home = () => {
         <div className="main__container">
           <div className=" clients-main__title">Clients</div>
           <div className=" clients-main__grid clients-grid">
-            <ClientGirdItem img={client_img_01} />
-            <ClientGirdItem img={client_img_02} />
-            <NavLink to="/contacts" onClick={scrollToTop}>
-              <div className="clients-grid__item _empty-clients-grid-item">
-                THIS IS THE PLACE FOR YOU
-              </div>
-            </NavLink>
-            <NavLink to="/contacts" onClick={scrollToTop}>
-              <div className="clients-grid__item _empty-clients-grid-item">
-                OR, IF YOU LIKE - IT
-              </div>
-            </NavLink>
-            <ClientGirdItem img={client_img_03} />
-            <ClientGirdItem img={client_img_07} />
-            <ClientGirdItem img={client_img_05} />
-            <ClientGirdItem img={client_img_06} />
-            <NavLink to="/contacts" onClick={scrollToTop}>
-              <div className="clients-grid__item _empty-clients-grid-item">
-                OR, IF YOU LIKE - IT
-              </div>
-            </NavLink>
+            {gridData.map((elem) => (
+              <ClientGirdItem {...elem} key={elem.img} />
+            ))}
           </div>
         </div>
       </section>
