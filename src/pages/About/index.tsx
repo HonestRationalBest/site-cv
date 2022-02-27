@@ -1,7 +1,9 @@
-import React from "react";
 //@ts-ignore
 import Marquee from "react-double-marquee";
-import { FaqItem } from "../../components/FaqItem/FaqItem";
+
+import { questionsData } from "./constants";
+import { FaqItem } from "./components/FaqItem/FaqItem";
+
 import hash_code from "../../images/hash_code.png";
 import about__img from "../../images/about__img.png";
 import main__about_img from "../../images/main_about_img.png";
@@ -9,31 +11,11 @@ import main_about_picture from "../../images/main__about_picture.png";
 import about_main from "../../images/about_main.png";
 import eye from "../../images/eye_img.png";
 import loop_img from "../../images/loop_img.png";
+
 import "./index.scss";
 
 const About = () => {
   const screenWidth = document.documentElement.clientWidth;
-
-  const questionsData = [
-    {
-      text: `We should think through all the elements that make up the first impression of the site so that they support the image you create. You will not achieve this effect with the help of templates.
-      Your website or social network is your face on the Internet. 
-      Let's make it professional and trusting.`,
-      title: "Do I really need a website design?",
-    },
-    {
-      text: `In fact, it will be great, wonderful and amazing. Check it.`,
-      title: "Why should I choose you?",
-    },
-    {
-      text: `If at the moment you do not have funds for development, but the product requires the intervention of a designer, we can always discuss a solution that suits you.`,
-      title: "Startups, let's do it.",
-    },
-    {
-      text: `Noting i'm really bad designer and i forgot to paste the text there:(`,
-      title: "When do I need to provide materials for the site?",
-    },
-  ];
 
   return (
     <main className="about">

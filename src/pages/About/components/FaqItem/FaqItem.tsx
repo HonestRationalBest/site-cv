@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./FaqItem.scss";
-import plus from "../../icons/plus.svg";
+import plus from "../../../../icons/plus.svg";
 
 interface FaqItemProps {
   title: string;

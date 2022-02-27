@@ -1,5 +1,3 @@
-import { NavLink } from "react-router-dom";
-import chevron from "../../icons/chevron_down.svg";
 import Element, { ElementProps } from "../Element";
 
 import "./index.scss";
@@ -11,7 +9,6 @@ interface SectionProps {
 }
 
 const Section: React.FC<SectionProps> = ({ title, data, isFirst }) => {
-  const screenWidth = document.documentElement.clientWidth;
 
   return (
     <div className={isFirst? "section__first" : "section"}>

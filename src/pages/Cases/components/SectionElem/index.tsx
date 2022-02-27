@@ -1,5 +1,6 @@
-import * as Scroll from 'react-scroll';
 import { Link } from "react-router-dom";
+
+import { scrollToTop } from "../../../../services";
 
 import link_arrow from "../../../../icons/link-arrow.svg";
 
@@ -22,11 +23,6 @@ export const SectionElem: React.FC<SectionElemProps> = ({
   to,
   isReverse,
 }) => {
-
-    const scrollToTop = () => {
-        Scroll.animateScroll.scrollToTop()
-      }
-
   return (
     <div className={isReverse ? "elem _change-direction" : "elem"}>
       <img src={img} alt={alt} className="elem__img" />

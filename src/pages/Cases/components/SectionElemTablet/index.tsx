@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { scrollToTop } from "../../../../services";
 
 import "./index.scss";
 
@@ -21,14 +22,14 @@ export const SectionElemTablet: React.FC<SectionElemTabletProps> = ({
     <>
       {link && (
         <a href={link} className="elem-tablet">
-          <div >
+          <div>
             <img src={img} alt={alt} />
             <h3>{title}</h3>
           </div>
         </a>
       )}
       {to && (
-        <Link to={to} className="elem-tablet">
+        <Link to={to} className="elem-tablet" onClick={scrollToTop}>
           <div>
             <img src={img} alt={alt} />
             <h3>{title}</h3>
