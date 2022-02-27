@@ -1,6 +1,9 @@
-import React, { useState } from "react";
-import "./FaqItem.scss";
+import { useState } from "react";
+
 import plus from "../../../../icons/plus.svg";
+
+import "./index.scss";
+
 
 interface FaqItemProps {
   title: string;

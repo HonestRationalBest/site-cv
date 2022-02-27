@@ -18,3 +18,30 @@ export const questionsData = [
     title: "When do I need to provide materials for the site?",
   },
 ];
+
+export const tableData = [
+  {
+    number: "01",
+    text: "Brief and Competitor analysis"
+  },
+  {
+    number: "02",
+    text: "Research&Collecting references"
+  },
+  {
+    number: "03",
+    text: "Prototyping"
+  },
+  {
+    number: "04",
+    text: "Visual Design"
+  },
+  {
+    number: "05",
+    text: "Responsive Versions"
+  },
+  {
+    number: "06",
+    text: "Design review"
+  }
+]

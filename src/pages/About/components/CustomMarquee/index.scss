@@ -1,0 +1,17 @@
+.running-string {
+    &__marquee {
+        font-weight: 700;
+        font-size: 84px;
+        line-height: 101 / 84 * 100%;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        @media (max-width: 768px) {
+            font-size: 64px;
+        }
+
+        @media (max-width: 400px) {
+            font-size: 34px;
+        }
+    }
+}

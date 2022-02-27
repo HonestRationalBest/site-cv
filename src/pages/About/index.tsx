@@ -1,22 +1,13 @@
-//@ts-ignore
-import Marquee from "react-double-marquee";
-
-import { questionsData } from "./constants";
-import { FaqItem } from "./components/FaqItem/FaqItem";
+import { questionsData, tableData } from "./constants";
+import { FaqItem, TableRow, CustomMarquee } from "./components";
 
 import hash_code from "../../images/hash_code.png";
-import about__img from "../../images/about__img.png";
 import main__about_img from "../../images/main_about_img.png";
 import main_about_picture from "../../images/main__about_picture.png";
-import about_main from "../../images/about_main.png";
-import eye from "../../images/eye_img.png";
-import loop_img from "../../images/loop_img.png";
 
 import "./index.scss";
 
 const About = () => {
-  const screenWidth = document.documentElement.clientWidth;
-
   return (
     <main className="about">
       <section className="about__main main-about">
@@ -39,11 +30,9 @@ const About = () => {
             <div className="main-about__photo">
               <img src={main__about_img} alt="main__about_img" />
             </div>
-            {screenWidth > 600 && (
-              <div className="main-about__picture">
-                <img src={main_about_picture} alt="main_about_picture" />
-              </div>
-            )}
+            <div className="main-about__picture">
+              <img src={main_about_picture} alt="main_about_picture" />
+            </div>
           </div>
         </div>
       </section>
@@ -57,34 +46,9 @@ const About = () => {
               </div>
             </div>
             <div className="description-about__table table-about">
-              <div className="table-about__item">
-                <div className="table-about__number">01</div>
-                <div className="table-about__text">
-                  Brief and Competitor analysis
-                </div>
-              </div>
-              <div className="table-about__item">
-                <div className="table-about__number">02</div>
-                <div className="table-about__text">
-                  Research&Collecting references
-                </div>
-              </div>
-              <div className="table-about__item">
-                <div className="table-about__number">03</div>
-                <div className="table-about__text">Prototyping</div>
-              </div>
-              <div className="table-about__item">
-                <div className="table-about__number">04</div>
-                <div className="table-about__text">Visual Design</div>
-              </div>
-              <div className="table-about__item">
-                <div className="table-about__number">05</div>
-                <div className="table-about__text">Responsive Versions</div>
-              </div>
-              <div className="table-about__item">
-                <div className="table-about__number">06</div>
-                <div className="table-about__text">Design review</div>
-              </div>
+              {tableData.map((row) => (
+                <TableRow {...row} />
+              ))}
             </div>
           </div>
         </div>
@@ -118,21 +82,17 @@ const About = () => {
                 </div>
               </div>
             </div>
-            {screenWidth > 900 && (
-              <img
-                className="ticket-about__img"
-                src={hash_code}
-                alt="hash_code"
-              />
-            )}
+            <img
+              className="ticket-about__img"
+              src={hash_code}
+              alt="hash_code"
+            />
           </div>
         </div>
       </section>
       <section className="about__running-string running-string">
         <div className="running-string__marquee">
-          <Marquee direction="left" speed="0.3">
-            While you are in doubt, someone has already taken the first step
-          </Marquee>
+          <CustomMarquee />
         </div>
       </section>
       <section className="about__faq">
