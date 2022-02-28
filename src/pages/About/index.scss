@@ -77,6 +77,9 @@
     font-weight: bold;
     font-size: 48px;
     line-height: 48px;
+      @media (max-width: 550px) {
+        font-size: 28px;
+      }
   }
 
   &__text {
@@ -142,7 +145,7 @@
     margin-bottom: 25px;
     color: #fff;
 
-    @media (max-width: 540px) {
+    @media (max-width: 550px) {
       font-size: 28px;
     }
   }
@@ -209,7 +212,7 @@
       margin-bottom: 25px;
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 550px) {
       width: 100%;
       padding-right: 40px;
       font-size: 28px;
@@ -254,13 +257,27 @@
 .item-ticket {
   padding: 0px 40px 0px 0px;
 
+  @media (max-width: 650px){
+    &:not(:last-child){
+      padding: 0px 40px 40px 0px;
+    }
+  }
+
   &__title {
     font-weight: 700;
     font-size: 84px;
     text-transform: uppercase;
+
+    @media (max-width: 800px){
+      font-size: 64px;
+    }
+    @media (max-width: 650px){
+      font-size: 34px;
+    }
   }
 
   &__text {
+    margin-top: 25px;
     font-size: 14px;
     line-height: 16 / 14 * 100%;
     font-family: Arial, Helvetica, sans-serif;
@@ -282,7 +299,8 @@
 
     @media (max-width: 550px) {
       width: 100%;
-    }
+      font-size: 28px;
+    } 
   }
 
   &__text {

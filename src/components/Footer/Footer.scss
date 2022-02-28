@@ -25,6 +25,10 @@
     height: 48px;
     max-width: 400px;
 
+    @media (max-width: 550px) {
+      padding: 80px 0px;
+    }
+
     h1 {
       display: flex;
       align-items: center;
@@ -32,6 +36,10 @@
       font-size: 48px;
       line-height: 100%;
       color: #fff;
+
+      @media (max-width: 550px) {
+        font-size: 28px;
+      }
     }
 
     &:hover {
@@ -45,9 +53,6 @@
       margin-left: 25px;
     }
 
-    @media (max-width: 470px) {
-      font-size: 28px;
-    }
   }
 }
 
