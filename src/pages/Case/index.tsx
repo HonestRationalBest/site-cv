@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import { NavLink, useParams } from "react-router-dom";
 
 import { scrollToTop } from "../../services";
-import { case01Data, case02Data } from "./constants";
 import Section from "./components/Section";
+import { languages } from "../../context";
+import LanguageContext from "../../context/LanguageContext";
 
 import { ReactComponent as Arrow } from "../../icons/white_arrow.svg";
 import chevron from "../../icons/chevron_down.svg";
@@ -13,33 +15,36 @@ interface CaseProps {}
 
 const Case: React.FC<CaseProps> = () => {
   const params = useParams();
+  const language = useContext(LanguageContext);
+
+  const getCurrentLanguage = () => (language === languages.en ? "en" : "ru");
 
   return (
-    <main className="case">
+    <main className={getCurrentLanguage() === "ru" ? "case ru" : "case"}>
       <div className="case__container">
         <div className="case__content">
           <div className="case__return return">
             <NavLink to="/cases" className="return-link">
               <img src={chevron} alt="" />
-              <div>Back to the cases</div>
+              <div>{language?.case.back}</div>
             </NavLink>
           </div>
           <div className="case__title">
-            {params.case === "networks_01" && "Creatives For Social Networks"}
-            {params.case === "networks_02" && "Social Media For EdMe"}
+            {language?.case.data.case01Data.title}
           </div>
           {params.case === "networks_01" &&
-            case01Data.map((section) => <Section {...section} />)}
+            language?.case.data.case01Data.data.map((section, i) => (
+              <Section {...section} isFirst={i === 0} />
+            ))}
           {params.case === "networks_02" &&
-            case02Data.map((section) => <Section {...section} />)}
+            language?.case.data.case02Data.data.map((section, i) => (
+              <Section {...section} isFirst={i === 0} />
+            ))}
           <div className="case__contacts contacts-case">
-            <div className="contacts-case__text">
-              If you want to improve the quality of your social networks,
-              contact me
-            </div>
+            <div className="contacts-case__text">{language?.case.footer}</div>
             <NavLink to="/contacts" onClick={scrollToTop}>
               <button className="contacts-case__button">
-                View contacts <Arrow stroke="#000" />
+                {language?.case.button} <Arrow stroke="#000" />
               </button>
             </NavLink>
           </div>

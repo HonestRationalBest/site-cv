@@ -1,16 +1,29 @@
 .section {
-    
+    margin-top: 120px;
+
+    &__first {
+        margin-top: 50px;
+    }
+
     &__title {
         font-style: normal;
         font-weight: bold;
         font-size: 18px;
         line-height: 22px;
-        margin-top: 50px;
     }
 
     &__grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         margin-top: 25px;
+        gap: 25px;
+
+        @media (max-width: 750px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 500px) {
+            grid-template-columns: 1fr;
+        }
     }
 }

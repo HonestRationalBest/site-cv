@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
@@ -8,31 +8,27 @@ import About from "./pages/About";
 import Case from "./pages/Case";
 import Contacts from "./pages/Contacts";
 import "./style/app/App.scss";
-import "./style/fonts/Fonts.scss";
-import * as Scroll from 'react-scroll';
+import { LanguageProvider, languages } from "./context";
 
 const App = () => {
+  const [language, setLanguage] = useState<any>();
 
-  useEffect(()=>{
-    Scroll.Events.scrollEvent.register('begin', function(to, element) {
-      console.log('begin', arguments);
-    });
-
-    Scroll.Events.scrollEvent.register('end', function(to, element) {
-      console.log('end', arguments);
-    });
-
-    Scroll.scrollSpy.update();
-
-    return ()=>{
-      Scroll.Events.scrollEvent.remove('begin');
-      Scroll.Events.scrollEvent.remove('end');
+  const toggleLanguages = (currentLanguage: any) => {
+    if(currentLanguage === "en"){
+      setLanguage(languages.ru);
+    }else if(currentLanguage === "ru"){
+      setLanguage(languages.en);
     }
-  },[])
+    // setLanguage(language === languages.en ? languages.ru : languages.en);
+  };
+
+  useEffect(() => {
+    setLanguage(languages.en);
+  }, []);
 
   return (
-    <>
-      <Header />
+    <LanguageProvider value={language as any}>
+      <Header toggleLanguages={toggleLanguages} />
       <Routes>
         <>
           <Route path="/" element={<Home />} />
@@ -43,7 +39,7 @@ const App = () => {
         </>
       </Routes>
       <Footer />
-    </>
+    </LanguageProvider>
   );
 };
 

@@ -8,12 +8,17 @@
     width: 1380 / 1440 * 100%;
   }
 
-  @media (max-width: 768px) {
-    max-width: 688 / 768 * 100%;
+  @media (max-width: 1050px) {
+    max-width: 960 / 1050 * 100%;
   }
 }
 
 .about {
+
+  &.ru {
+    font-family: "Inter";
+  }
+
   &__description {
     background-image: url(../../images/background__about.png);
     padding-bottom: 120px;
@@ -24,19 +29,11 @@
   }
 
   &__ticket {
-    padding: 160px 0;
+    padding: 80px 0 120px 0;
   }
 
   &__running-string {
-    padding-bottom: 120px;
     background: #fff;
-    @media (max-width: 1000px) {
-      padding-bottom: 70px;
-    }
-
-    @media (max-width: 400px) {
-      margin-top: 80px;
-    }
   }
 
   &__faq {
@@ -56,7 +53,7 @@
   margin-top: 240px;
   padding-bottom: 140px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1050px) {
     margin-top: 170px;
     padding-bottom: 70px;
   }
@@ -71,15 +68,20 @@
     @media (max-width: 600px) {
       flex-direction: column;
     }
+
+    @media (max-width: 1050px) {
+      justify-content: flex-start;
+    }
   }
 
   &__title {
     font-weight: bold;
     font-size: 48px;
     line-height: 48px;
-      @media (max-width: 550px) {
-        font-size: 28px;
-      }
+
+    @media (max-width: 550px) {
+      font-size: 28px;
+    }
   }
 
   &__text {
@@ -87,6 +89,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 16px;
+    white-space: pre-line;
 
     @media (max-width: 1000px) {
       width: 280px;
@@ -95,15 +98,18 @@
     @media (max-width: 600px) {
       margin-top: 25px;
       width: 100%;
+      margin-left: 0px !important;
+    }
+
+    @media (max-width: 1050px) {
+      margin-left: 68px;
+      margin-bottom: 50px;
     }
   }
 
   &__images {
     display: flex;
 
-    @media (max-width: 1000px) {
-      padding-top: 50px;
-    }
   }
 
   &__photo {
@@ -257,8 +263,8 @@
 .item-ticket {
   padding: 0px 40px 0px 0px;
 
-  @media (max-width: 650px){
-    &:not(:last-child){
+  @media (max-width: 650px) {
+    &:not(:last-child) {
       padding: 0px 40px 40px 0px;
     }
   }
@@ -268,16 +274,17 @@
     font-size: 84px;
     text-transform: uppercase;
 
-    @media (max-width: 800px){
+    @media (max-width: 800px) {
       font-size: 64px;
     }
-    @media (max-width: 650px){
+
+    @media (max-width: 650px) {
       font-size: 34px;
     }
   }
 
   &__text {
-    margin-top: 25px;
+    margin-top: 15px;
     font-size: 14px;
     line-height: 16 / 14 * 100%;
     font-family: Arial, Helvetica, sans-serif;
@@ -300,7 +307,7 @@
     @media (max-width: 550px) {
       width: 100%;
       font-size: 28px;
-    } 
+    }
   }
 
   &__text {
@@ -316,6 +323,10 @@
 
     @media (max-width: 550px) {
       width: 100%;
+    }
+
+    @media (max-width: 700px) {
+      margin-bottom: 25px;
     }
   }
 

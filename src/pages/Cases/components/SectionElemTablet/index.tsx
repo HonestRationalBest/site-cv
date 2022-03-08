@@ -21,7 +21,7 @@ export const SectionElemTablet: React.FC<SectionElemTabletProps> = ({
   return (
     <>
       {link && (
-        <a href={link} className="elem-tablet">
+        <a href={link} className="elem-tablet" rel="noreferrer" target="_blank" >
           <div>
             <img src={img} alt={alt} />
             <h3>{title}</h3>

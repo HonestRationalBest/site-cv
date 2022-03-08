@@ -1,26 +1,3 @@
-export const servicesData = [
-  {
-    text: "Landing page",
-    price: "120",
-  },
-  {
-    text: "Online store",
-    price: "240",
-  },
-  {
-    text: "Corporate website",
-    price: "320",
-  },
-  {
-    text: "Application",
-    price: "280",
-  },
-  {
-    text: "Creatives for social networks",
-    price: "40",
-  },
-];
-
 export const gridData = [
   {
     isEmpty: false,

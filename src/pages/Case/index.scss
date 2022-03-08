@@ -2,6 +2,10 @@
     margin-top: 190px;
     margin-bottom: 170px;
 
+    &.ru{
+        font-family: "Inter";
+      }
+
     &__container {
         width: 1200 / 1440 * 100%;
         margin: 0px auto;
@@ -12,9 +16,9 @@
             width: 1380 / 1440 * 100%;
         }
 
-        @media (max-width: 900px) {
-            width: 688 / 768 * 100%;
-        }
+        @media (max-width: 1050px) {
+            max-width: 960 / 1050 * 100%;
+          }
     }
 
     &__return {
@@ -35,6 +39,10 @@
         line-height: 48px;
         width: 450px;
         margin-top: 50px;
+
+        @media (max-width: 600px) {
+            width: 100%;
+        }
     }
 }
 
@@ -71,6 +79,7 @@
         font-size: 14px;
         padding: 12px 22px;
         margin-top: 40px;
+        justify-content: center;
 
         svg {
             width: 24px;
@@ -79,7 +88,7 @@
         }
 
         &:hover {
-            background: #000;
+            background: #171717;
             color: #fff;
             transition: all 0.3s ease 0s;
 
@@ -89,7 +98,7 @@
             }
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 450px) {
             width: 100%;
         }
     }

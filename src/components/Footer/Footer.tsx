@@ -1,19 +1,27 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import { scrollToTop } from "../../services";
+import LanguageContext from "../../context/LanguageContext";
+import { languages } from "../../context";
 
 import { ReactComponent as Arrow } from "../../icons/white_arrow.svg";
 
 import "./Footer.scss";
 
 export const Footer = () => {
+
+  const language = useContext(LanguageContext);
+  
+  const getCurrentLanguage = () => (language === languages.en ? "en" : "ru");
+
   return (
-    <footer className="footer">
+    <footer className={getCurrentLanguage() === "ru" ? "footer ru" : "footer"}>
       <div className="footer__container">
         <div className="footer__title">
           <NavLink to="/contacts" onClick={scrollToTop}>
             <h1>
-              Let's talk
+              {language?.footer.title}
               <Arrow stroke="#fff" />
             </h1>
           </NavLink>
@@ -23,27 +31,27 @@ export const Footer = () => {
             <div className="menu-footer__elem">
               <ul className="menu-footer__list">
                 <li className="menu-footer__item" onClick={scrollToTop}>
-                  <NavLink to="/cases">cases</NavLink>
+                  <NavLink to="/cases">{language?.footer.cases}</NavLink>
                 </li>
                 <li className="menu-footer__item" onClick={scrollToTop}>
-                  <NavLink to="/about">about</NavLink>
+                  <NavLink to="/about">{language?.footer.about}</NavLink>
                 </li>
                 <li className="menu-footer__item" onClick={scrollToTop}>
-                  <NavLink to="/contacts">contact</NavLink>
+                  <NavLink to="/contacts">{language?.footer.contacts}</NavLink>
                 </li>
               </ul>
             </div>
             <div className="menu-footer__elem">
               <ul className="menu-footer__list">
                 <li className="menu-footer__item">
-                  <a href="https://www.instagram.com/a_sa_ch/" rel="noreferrer" target="_blank">instagram</a>
+                  <a href="https://www.instagram.com/a_sa_ch/" rel="noreferrer" target="_blank">{language?.footer.instagram}</a>
                 </li>
                 <li className="menu-footer__item">
-                  <a href="https://www.behance.net/angelinsachivk" rel="noreferrer" target="_blank">behance</a>
+                  <a href="https://www.behance.net/angelinsachivk" rel="noreferrer" target="_blank">{language?.footer.behance}</a>
                 </li>
                 <li className="menu-footer__item">
                   <a href="https://www.linkedin.com/in/angelina-sachivko-3467111b7/" rel="noreferrer" target="_blank">
-                    linkedin
+                  {language?.footer.whatsapp}
                   </a>
                 </li>
               </ul>
@@ -51,9 +59,9 @@ export const Footer = () => {
           </div>
           <div className="footer__info info-footer">
             <div className="info-footer__elem">
-              Copyright © 2021. All rights reserved.
+            {language?.footer.copyright}
             </div>
-            <div className="info-footer__elem">Privacy policy</div>
+            <div className="info-footer__elem">{language?.footer.privacy}</div>
           </div>
         </div>
       </div>
