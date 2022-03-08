@@ -1,7 +1,6 @@
 import { useContext } from "react";
 
 import LanguageContext from "../../context/LanguageContext";
-import { questionsData } from "./constants";
 import { FaqItem, TableRow, CustomMarquee } from "./components";
 import { languages } from "../../context";
 
