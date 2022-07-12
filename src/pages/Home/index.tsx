@@ -31,20 +31,24 @@ const Home = () => {
               <div className="offer-header__text">
                 {language?.home.header.text}
               </div>
-              <button className="offer-header__button">
-                {language?.home.header.button} <Arrow stroke="#fff" />
-              </button>
+              <NavLink to="/contacts" onClick={scrollToTop}>
+                <button className="offer-header__button">
+                  {language?.home.header.button} <Arrow stroke="#fff" />
+                </button>
+              </NavLink>
             </div>
             <div className="main-header__img"></div>
           </div>
         </div>
       </section>
       <section>
-        <Slider/>
+        <Slider />
       </section>
       <section className="main__services services-main">
         <div className="main__container">
-          <div className="services-main__title">{language?.home.services.title}</div>
+          <div className="services-main__title">
+            {language?.home.services.title}
+          </div>
           <div className="services-main__table table-services">
             {language?.home.services.data.map((service) => (
               <Service {...service} key={service.text} />
@@ -59,14 +63,20 @@ const Home = () => {
               <div className="about-body__title">
                 {language?.home.about.title}
               </div>
-              <div className="about-body__text">{language?.home.about.text}</div>
+              <div className="about-body__text">
+                {language?.home.about.text}
+              </div>
               <NavLink to="/about" onClick={scrollToTop}>
                 <button className="about-body__button">
                   {language?.home.about.button} <Arrow stroke="#000" />
                 </button>
               </NavLink>
             </div>
-            <img className="about-body__img" src="https://res.cloudinary.com/ds8hydjea/image/upload/v1646586696/Site-cv/about_main_cyaoz3.png" alt="about img"/> 
+            <img
+              className="about-body__img"
+              src="https://res.cloudinary.com/ds8hydjea/image/upload/v1646586696/Site-cv/about_main_cyaoz3.png"
+              alt="about img"
+            />
           </div>
         </div>
       </section>
